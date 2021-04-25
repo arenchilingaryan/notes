@@ -1,0 +1,180 @@
+
+.terms_wrapper {
+    position: fixed;
+    max-width: 1300px;
+    width: 40%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateY(0px);
+    background-color: white;
+    z-index: -100;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    opacity: 0;
+    transition: all .2s ease-in;
+    padding: 10px;
+    border-radius: 10px;
+    @media (max-width: 1440px) {
+        max-width: 1000px;
+    }
+}
+
+.terms_wrapper-open {
+    opacity: 1;
+    z-index: 100;
+    animation: mountTermsModal ease-in .2s;
+}
+
+.terms_content {
+    max-height: 500px;
+    overflow-y: scroll;
+    padding: 20px 50px 20px 50px;
+    .terms_text {
+        font-size: 18px;
+    }
+}
+
+.terms_title {
+    font-weight: 400;
+    color: black;
+}
+
+.terms_wrapper-title-name {
+    margin-left: 50px;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.terms_wrapper-title {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    margin-bottom: 20px;
+
+    .x-icon {
+        font-size: 35px;
+        color: tomato;
+        margin-right: 20px;
+        border: 1px solid tomato;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: all ease-in .2s;
+        &:hover {
+            background: tomato;
+            color: white;
+        }
+    }
+}
+
+.terms_footer {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid grey;
+    margin-top: 10px;
+    padding-top: 10px;
+    .terms_button {
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+        padding: 10px 15px 10px 15px;
+        border: 1px solid #3e50b4;
+        transition: transform ease-in .2s;
+        background-color: #3e50b4;
+        color: white;
+        width: 200px;
+        height: 50px;
+        &:hover {
+            transform: scale(1.1);
+        }
+        @media (max-width: 1440px) {
+            width: 100px;
+            height: 40px;
+        }
+    }
+}
+
+.terms_content::-webkit-scrollbar {
+    width: 7px;
+}
+
+.terms_content::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.terms_content::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid grey;
+}
+
+.modal-body {
+    position: relative;
+    min-height: 300px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes mountTermsModal {
+    0% {transform: translate(-50%, -50%) translateY(50px);}
+    100% {transform: translate(-50%, -50%) translateY(0px);}
+}
+
+@media (max-width: 1000px) {
+    .terms_wrapper {
+        width: 500px;
+    }
+    .terms_title {
+        font-size: 20px;
+    }
+    .terms_text {
+        font-size: 16px;
+    }
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+    transition: all .3s;
+}
+.overlay-active {
+    opacity: 1;
+    background-color: rgba($color: black, $alpha: 0.3);
+    z-index: 10;
+    transition: all ease-in .3s;
+}
+
+.request-buttons {
+    display: flex;
+    align-items: center;
+    .request-buttons-item {
+        margin-right: 10px;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+
+.request-buttons.modal-buttons {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+@media (max-width: 600px) {
+    .terms_wrapper {
+        width: 90%;
+    }
+}

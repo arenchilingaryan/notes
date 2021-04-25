@@ -1,0 +1,11 @@
+.folders__wrapper-skeleton {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 35px;
+    .folders__skeleton-item {
+        width: 100px;
+        height: 80px;
+    }
+}

@@ -1,0 +1,31 @@
+.line-spinner {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    &::after {
+        position: absolute;
+        content: "";
+        left: 50%;
+        top: 0;
+        width: 0%;
+        height: 5px;
+        // background-color: #3FB568;
+        background-color: #00dbde;
+        background-image: linear-gradient(90deg, #00dbde 0%, #fc00ff 50%, #3FB568 100%);
+        transform: translate(-50%);
+        animation: lineSpinnerLoad ease-in 3s infinite;
+        border-radius: 50px;
+    }
+}
+
+@keyframes lineSpinnerLoad {
+    0% {
+    }
+    50% {
+        width: 100%;
+    }
+}

@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
 import './App.css';
+import Documents from './components/Documents/Documents';
+import DocumentsItem from './components/DocumentsItem/DocumentsItem';
+import Folders from './components/Folders/Folders';
+import Header from './components/Header/Header';
+import SpinnerLine from './components/SpinnerLine/SpinnerLine';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header>
+        <Route exact path="/" component={Folders} />
+        <Route exact path="/:folderId" component={Documents} />
+        <Route path="/:folderId/:documentId" component={DocumentsItem} />
+      </Header>
     </div>
   );
 }

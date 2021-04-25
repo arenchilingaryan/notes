@@ -1,0 +1,16 @@
+.column-skeleton {
+    display: flex;
+    flex-direction: column;
+}
+
+.skeleton-item-line {
+    margin-bottom: 20px;
+    width: 500px;
+    @media (max-width: 500px) {
+        width: 300px;
+    }
+}
+
+.document-title-skeleton {
+    width: 200px;
+}
